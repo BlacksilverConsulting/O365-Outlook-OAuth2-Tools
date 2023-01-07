@@ -1,0 +1,18 @@
+--- /usr/bin/img-eng-email.pl
+@@ -220,6 +220,16 @@
+
+     my $account_options  = $account_row->[4];
+     my $account_sequence = $account_row->[5];
++
++    if ( $account_options =~ /365/ ) {
++        logx "Launching helper for OAuth-enabled account", 5;
++       my ( $o365_status ) = os "/var/imaging/bin/img-eng-email-o365.pl $account_sequence";
++        if ( $o365_status ) {
++            logx "Error [$o365_status] launching o365 helper", 2;
++        }
++        next ACCOUNT;
++    }
++
+     if ( not email_import_lock $account_sequence) {
+         logx "Didn't get a lock on [$account_sequence], skipping", 5;
+         next ACCOUNT;
