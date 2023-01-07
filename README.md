@@ -10,11 +10,12 @@ To use o365-token-saver.pl:
 6. Create a `.o365` directory under the work directory
 7. Create the file `_nn_-config.json` in the `.o365` directory based on the `00-config.json` file in this repo
 8. Replace all of the placeholders in that file with the appropirate values from your environment
-9. Run `o365-token-saver.pl` with the `_nn_` from step 7 as the only command-line parameter
-10. When the browser opens, enter the email address and password
-11. If this is the first time using this account with this application, you will also need to grant the application the requested permissions
-12. If you complete the sign-on within 30 seconds, the browser will display a success message
-13. The access token has been saved as `.o365\_nn_-token.json`
+9. IMPORTANT: If there is a firewall on the system where you are running this script, configure it to allow requests to TCP/3017 to reach `o365-token-saver.pl` or it won't work
+10. Run `o365-token-saver.pl` with the `_nn_` from step 7 as the only command-line parameter
+11. When the browser opens, enter the email address and password
+12. If this is the first time using this account with this application, you will also need to grant the application the requested permissions
+13. If you complete the sign-on within 30 seconds, the browser will display a success message
+14. The access token has been saved as `.o365\_nn_-token.json`
 
 To use img-eng-email.pl.patch.o365:
 
@@ -29,7 +30,3 @@ To use img-eng-email-o365.pl:
 5. `psql images -c "UPDATE cnf_Email_Import SET cei_Options = cei_Options || ' 365' WHERE cei_Sequence = _nn_;"`
 6. Optional: `su mailer` and run it manually with `/var/imaging/bin/img-eng-email-o365.pl _nn_`
 7. Check `/var/log/imaging/mailer` to see if it is working
-
-
-
-
