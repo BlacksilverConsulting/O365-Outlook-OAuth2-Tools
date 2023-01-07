@@ -1,0 +1,7 @@
+{
+    "tenantId" : "<<TENANT UUID>>",
+    "clientId" : "<<CLIENT UUID>>",
+    "clientSecret" : "<<CLIENT SECRET>>",
+    "server" : "outlook.office365.com",
+    "user" : "<<account@domain.tld>>"
+}
