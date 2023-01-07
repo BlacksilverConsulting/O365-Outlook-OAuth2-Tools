@@ -1,15 +1,11 @@
 #!/usr/bin/perl
 
-use English; 
+use English;
 use strict;
 use warnings;
 
 use chilkat();
-
-# TODO: POD
-
-# Much of this is based on the chilkat example at
-# https://www.example-code.com/perl/office365_oauth2_access_token.asp
+use Data::Dumper;
 
 my $glob = chilkat::CkGlobal->new();
 my $success = $glob->UnlockBundle("");
@@ -37,7 +33,7 @@ if ( $sequence !~ /^[0-9]+$/ ) {
 }
 
 my $jsonConfig = chilkat::CkJsonObject->new();
-my $config_file_name = "$sequence-config.json";
+my $config_file_name = ".o365\\$sequence-config.json";
 $success = $jsonConfig->LoadFile($config_file_name);
 if ($success != 1) {
     print "Failed to load config file [$config_file_name]\n";
@@ -55,12 +51,12 @@ $oauth2->put_ClientSecret($jsonConfig->stringOf("clientSecret"));
 $oauth2->put_CodeChallenge(0);
 
 my @scopes = (
-    "openid", 
-    "profile", 
-    "offline_access", 
-    "https://outlook.office365.com/SMTP.Send", 
-    "https://outlook.office365.com/POP.AccessAsUser.All", 
-    "https://outlook.office365.com/IMAP.AccessAsUser.All" 
+    "openid",
+    "profile",
+    "offline_access",
+    "https://outlook.office365.com/SMTP.Send",
+    "https://outlook.office365.com/POP.AccessAsUser.All",
+    "https://outlook.office365.com/IMAP.AccessAsUser.All"
     );
 
 $oauth2->put_Scope( join ' ', @scopes );
@@ -72,7 +68,7 @@ if ( $oauth2->get_LastMethodSuccess() != 1 ) {
     exit;
 }
 
-# This is specific to Windows. Your OS may vary.
+print "$url\n";
 `start "" "$url"`;
 
 # Now wait for the authorization.
@@ -117,7 +113,6 @@ if ( $oauth2->get_AuthFlowState() != 3 ) {
 }
 
 print "OAuth2 authorization granted!" . "\r\n";
-print "Access Token = " . $oauth2->accessToken() . "\r\n";
 
 # Get the full JSON response:
 my $json = chilkat::CkJsonObject->new();
@@ -128,7 +123,7 @@ $json->put_EmitCompact( 0 );
 
 # Save the JSON to a file for future requests.
 my $fac = chilkat::CkFileAccess->new();
-$success = $fac->WriteEntireTextFile( "$sequence-token.json", $json->emit(), "utf-8", 0 );
+$success = $fac->WriteEntireTextFile( ".o365\\$sequence-token.json", $json->emit(), "utf-8", 0 );
 if ($success != 1) {
     print $fac->lastErrorText();
     exit;
