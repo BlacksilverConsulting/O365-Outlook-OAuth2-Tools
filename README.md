@@ -1,6 +1,8 @@
 # O365-Outlook-OAuth2-Tools
 Utilities for working with O365 Outlook and OAuth2
 
+Many thanks to [Chilkat Software](https://www.chilkatsoft.com), their Perl library and examples saved me uncountable hours on this project.
+
 To use o365-token-saver.pl:
 1. Create an application in your AAD environment, and note the client ID and Client secret
 2. Install Perl (On Windows, use Strawberry Perl)
