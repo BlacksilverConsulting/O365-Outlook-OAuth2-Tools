@@ -6,7 +6,7 @@ Many thanks to [Chilkat Software](https://www.chilkatsoft.com), their Perl libra
 To use o365-token-saver.pl:
 1. Create an application in your AAD environment, and note the client ID and Client secret
 2. Install Perl (On Windows, use Strawberry Perl)
-3. Install the Chilkat library
+3. Install the [Chilkat library](https://www.chilkatsoft.com/perl.asp)
 4. Create a directory to work in, and download o365-token-saver.pl to it
 5. Alter the code to include your Chilkat license key
 6. Create a `.o365` directory under the work directory
