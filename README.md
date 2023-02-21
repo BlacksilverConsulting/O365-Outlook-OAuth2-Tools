@@ -17,7 +17,9 @@ To use o365-token-saver.pl:
 11. When the browser opens, enter the email address and password
 12. If this is the first time using this account with this application, you will also need to grant the application the requested permissions
 13. If you complete the sign-on within 30 seconds, the browser will display a success message
-14. The access token has been saved as `.o365\_nn_-token.json`
+14. The access token has been saved as `_nn_-token.json` in the .o365 directory
+
+The remaining instructions are application specific and won't make much sense without that application.
 
 To use img-eng-email.pl.patch.o365:
 
