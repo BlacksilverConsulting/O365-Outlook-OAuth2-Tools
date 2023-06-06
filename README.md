@@ -4,8 +4,8 @@ Utilities for working with O365 Outlook and OAuth2
 Many thanks to [Chilkat Software](https://www.chilkatsoft.com), their Perl library and examples saved me uncountable hours on this project.
 
 To use o365-token-saver.pl:
-1. Create an application in your AAD environment, and note the client ID and Client secret
-2. Install Perl (On Windows, use Strawberry Perl)
+1. Create an application in your AAD environment, and note the client ID and Client secret. (If you're not sure what this is, there is a [walkthrough](https://cknotes.com/create-azure-app-registration-for-use-with-imap-pop3-and-smtp/))
+2. Install Perl (On Windows, use [Strawberry Perl](https://strawberryperl.com))
 3. Install the [Chilkat library](https://www.chilkatsoft.com/perl.asp)
 4. Create a directory to work in, and download o365-token-saver.pl to it
 5. Alter the code to include your Chilkat license key
