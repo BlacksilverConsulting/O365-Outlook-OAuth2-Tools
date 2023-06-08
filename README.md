@@ -5,19 +5,20 @@ Many thanks to [Chilkat Software](https://www.chilkatsoft.com), their Perl libra
 
 To use o365-token-saver.pl:
 1. Create an application in your AAD environment, and note the client ID and Client secret. (If you're not sure what this is, there is a [walkthrough](https://cknotes.com/create-azure-app-registration-for-use-with-imap-pop3-and-smtp/))
-2. Install Perl (On Windows, use [Strawberry Perl](https://strawberryperl.com))
-3. Install the [Chilkat library](https://www.chilkatsoft.com/perl.asp)
-4. Create a directory to work in, and download o365-token-saver.pl to it
-5. Alter the code to include your Chilkat license key
-6. Create a `.o365` directory under the work directory
-7. Create the file `_nn_-config.json` in the `.o365` directory based on the `00-config.json` file in this repo
-8. Replace all of the placeholders in that file with the appropirate values from your environment
-9. IMPORTANT: If there is a firewall on the system where you are running this script, configure it to allow requests to TCP/3017 to reach `o365-token-saver.pl` or it won't work
-10. Run `o365-token-saver.pl` with the `_nn_` from step 7 as the only command-line parameter
-11. When the browser opens, enter the email address and password
-12. If this is the first time using this account with this application, you will also need to grant the application the requested permissions
-13. If you complete the sign-on within 30 seconds, the browser will display a success message
-14. The access token has been saved as `_nn_-token.json` in the .o365 directory
+2. TODO: There are some extra AAD steps here, like setting the callback URL and API permissions, that need to be added here
+3. Install Perl (On Windows, use [Strawberry Perl](https://strawberryperl.com))
+4. Install the [Chilkat library](https://www.chilkatsoft.com/perl.asp)
+5. Create a directory to work in, and download o365-token-saver.pl to it
+6. Alter the code to include your Chilkat license key
+7. Create a `.o365` directory under the work directory
+8. Create the file `_nn_-config.json` in the `.o365` directory based on the `00-config.json` file in this repo
+9. Replace all of the placeholders in that file with the appropirate values from your environment
+10. IMPORTANT: If there is a firewall on the system where you are running this script, configure it to allow requests to TCP/3017 to reach `o365-token-saver.pl` or it won't work
+11. Run `o365-token-saver.pl` with the `_nn_` from step 7 as the only command-line parameter
+12. When the browser opens, enter the email address and password
+13. If this is the first time using this account with this application, you will also need to grant the application the requested permissions
+14. If you complete the sign-on within 30 seconds, the browser will display a success message
+15. The access token has been saved as `_nn_-token.json` in the .o365 directory
 
 The remaining instructions are application specific and won't make much sense without that application.
 
